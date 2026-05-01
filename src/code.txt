@@ -1,0 +1,166 @@
+{/* <div className={styles.productDisplay}>
+        <div className={styles.productDisplay_left_side}>
+          <div className={styles.image_list}>
+            <img src={product[0].image} alt="product image" />
+            <img src={product[0].image} alt="product image" />
+            <img src={product[0].image} alt="product image" />
+            <img src={product[0].image} alt="product image" />
+          </div>
+          <div className={styles.product_image}>
+            <img src={product[0].image} alt="product image" />
+          </div>
+        </div>
+        <div className={styles.productDisplay_right_side}>
+          <h2>{product[0].name}</h2>
+          <div className={styles.rating}>
+            <img src={star_icon} alt="" />
+            <img src={star_icon} alt="" />
+            <img src={star_icon} alt="" />
+            <img src={star_icon} alt="" />
+            <img src={star_dull_icon} alt="" />
+            <span>(152)</span>
+          </div>
+          <p className={styles.product_item_price}>
+            <span className={styles.product_item_new_price}>
+              ${product[0].new_price}
+            </span>
+            <span className={styles.product_item_old_price}>
+              ${product[0].old_price}
+            </span>
+          </p>
+          <p className={styles.description}>
+            {product.description ??
+              "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves,worn as an undershirt or outer garment."}
+          </p>
+          <div className={styles.size_section}>
+            <h3>Select Size</h3>
+            <div className={styles.sizes}>
+              <span>S</span>
+              <span>M</span>
+              <span>L</span>
+              <span>XL</span>
+              <span>XXL</span>
+            </div>
+          </div>
+          <p className={styles.meta}>
+            <strong>Category :</strong>{" "}
+            <span>
+              {product[0].category[0].toUpperCase() +
+                product[0].category.slice(1)}
+            </span>
+          </p>
+          <button className={styles.add_to_cart}>ADD TO CART</button>
+        </div>
+      </div> */}
+
+      
+.productDisplay {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.productDisplay_left_side {
+  display: flex;
+  gap: 10px;
+}
+
+.image_list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.image_list img {
+  width: 100px;
+  object-fit: fill;
+}
+
+.product_image {
+  width: 425px;
+}
+
+.product_image img {
+  width: 100%;
+}
+
+.productDisplay_right_side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  font-family: "Roboto", sans-serif;
+}
+
+.rating {
+  margin-top: 10px;
+}
+
+.description {
+  color: #555;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.size_section {
+  margin-bottom: 15px;
+  margin-top: 20px;
+}
+
+.size_section h3 {
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.sizes {
+  display: flex;
+  gap: 10px;
+}
+
+.sizes span {
+  padding: 10px 15px;
+  background-color: #fcfcfbde;
+  border: 1px solid gainsboro;
+}
+
+.add_to_cart {
+  padding: 15px 30px;
+  cursor: pointer;
+  background: #f53f3c;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  text-transform: uppercase;
+  border: none;
+}
+
+.meta {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.meta span {
+  font-weight: 600;
+}
+
+.product_item_price {
+  text-align: left;
+  margin-top: 8px;
+}
+
+.product_item_new_price,
+.product_item_old_price {
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+}
+
+.product_item_new_price {
+  font-weight: 700;
+}
+
+.product_item_old_price {
+  text-decoration: line-through;
+  color: #6b6a6a;
+  margin-left: 15px;
+}

@@ -1,0 +1,11 @@
+.bread_crum {
+  display: flex;
+  gap: 10px;
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+}
+
+.bread_crum img {
+  width: 5px;
+  object-fit: contain;
+}

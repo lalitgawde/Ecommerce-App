@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 0px;
+  border-bottom: 2px solid #ececec;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+}
+
+.logo p {
+  font-size: 30px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+}
+
+.navlist {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.navItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.navlist p {
+  color: #6b6a6a;
+  font-family: "Roboto", sans-serif;
+}
+
+.active {
+  height: 3px;
+  width: 30px;
+  background-color: #e48c8c;
+  border-radius: 10px;
+}
+
+.header_actions {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.header_actions button {
+  padding: 10px 30px;
+  border-radius: 20px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cartIcon {
+  position: relative;
+  cursor: pointer;
+}
+
+.cartNumber {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  border-radius: 50%;
+  font-size: 15px;
+  background-color: rgb(238, 75, 75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+  color: white;
+}
+
+.user {
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  background-color: #e48c8c;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(243, 239, 239);
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  position: relative;
+  font-weight: 500;
+}
+
+.userActions {
+  position: absolute;
+  display: flex;
+  /* flex-direction: column; */
+  bottom: -65px;
+  padding: 10px 20px;
+  right: 5px;
+  background-color: white;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  display: flex;
+  gap: 10px;
+  transition: all 2s;
+}
+
+@media screen and (max-width: 700px) {
+  .userActions {
+    flex-direction: column;
+  }
+
+  .navlist {
+    display: none;
+  }
+
+  .logo p {
+    font-size: 20px;
+  }
+}

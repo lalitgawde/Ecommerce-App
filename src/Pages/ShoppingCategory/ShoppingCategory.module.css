@@ -1,0 +1,99 @@
+.shoppingCategory {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 10px;
+}
+
+.bannerImg {
+  object-fit: contain;
+  width: 80%;
+}
+
+.container {
+  width: 80%;
+  margin: 40px 0px;
+}
+
+.filters {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filters p {
+  font-size: 15px;
+  /* color: #ececec; */
+  font-family: "Roboto", sans-serif;
+}
+
+.filters button {
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 400;
+  color: #626161;
+  background-color: transparent;
+  border: 2px solid #cccbcb;
+  font-family: "Roboto", sans-serif;
+}
+
+.dropdown_item {
+  width: max-content;
+  padding: 8px 4px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  color: #626161;
+  background-color: transparent;
+  font-family: "Roboto", sans-serif;
+}
+
+.dropdown_item:hover {
+  color: rgb(157, 157, 233);
+}
+
+.filters img {
+  width: 10px;
+}
+
+.category_product {
+  margin: 18px 0px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 12px;
+  row-gap: 30px;
+  transition: all 3s;
+}
+
+.message {
+  text-align: center;
+  font-size: 18px;
+  color: red;
+  margin-top: 2rem;
+  font-family: "Roboto", sans-serif;
+}
+
+.loadMore_container {
+  display: flex;
+  align-items: center;
+  margin: 6rem 0px 0px 0px;
+}
+
+.loadMore_container div {
+  flex-grow: 1;
+  background-color: gray;
+  height: 2px;
+}
+
+.loadMore_container button {
+  cursor: pointer;
+  margin: 0px 6px;
+  padding: 16px 28px;
+  border: none;
+  border-radius: 30px;
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+}

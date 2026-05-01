@@ -1,0 +1,40 @@
+.cardSkeleton {
+  background: linear-gradient(to right, #d5d5d5, #d5d5d5);
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.product_item {
+  width: 300px;
+}
+
+.product_item_img {
+  width: 100%;
+  height: 400px;
+  margin-bottom: 10px;
+}
+
+.product_item_name {
+  width: 100%;
+  height: 25px;
+  margin-bottom: 10px;
+}
+
+.product_item_price {
+  display: flex;
+}
+
+.product_item_new_price,
+.product_item_old_price {
+  width: 30%;
+  height: 20px;
+}
+
+.product_item_old_price {
+  margin-left: 10px;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+  }
+}

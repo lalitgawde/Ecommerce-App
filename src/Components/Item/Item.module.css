@@ -1,0 +1,56 @@
+.product_item {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.product_item img {
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
+  transition:
+    transform 400ms ease,
+    z-index 0ms 400ms;
+}
+
+.product_item img:hover {
+  transform: scale(1.1); /* A smooth visual transition */
+  z-index: 10; /* Bring to front on hover */
+  /* Transition for moving IN: z-index is NOT delayed (0ms) */
+  transition:
+    transform 400ms ease,
+    z-index 0ms 0ms;
+}
+
+.product_item_name,
+.product_item_price {
+  text-align: left;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+}
+
+.product_item_price {
+  align-self: baseline;
+}
+
+.product_item_new_price,
+.product_item_old_price {
+  font-size: 15px;
+}
+
+.product_item_new_price {
+  font-weight: 700;
+}
+
+.product_item_old_price {
+  text-decoration: line-through;
+  color: #6b6a6a;
+  margin-left: 15px;
+}

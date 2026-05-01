@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+.newsletter {
+  background: linear-gradient(180deg, #fde1ff, #e1ffea22 60%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 60px 10px;
+  margin: 10px 4.5rem;
+}
+
+.newsletter h2 {
+  font-size: 40px;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+  color: #454345;
+  text-transform: capitalize;
+}
+
+.newsletter_subscribe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.newsletter_subscribe p {
+  font-size: 16px;
+  font-weight: 300;
+  color: #454345;
+  font-family: "Roboto", sans-serif;
+}
+
+.newsletter_input {
+  position: relative;
+}
+
+.newsletter_input input {
+  padding: 10px 25px;
+  font-size: 15px;
+  width: 450px !important;
+  border-radius: 30px;
+  border: 1px solid #454345;
+}
+
+.newsletter_input input:focus {
+  outline: none;
+}
+
+.newsletter_input button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px 25px;
+  font-size: 14px;
+  border-radius: 30px;
+  border: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+  .newsletter {
+    margin: 0px;
+    padding: 40px 30px;
+    gap: 30px;
+  }
+
+  .newsletter h2 {
+    font-size: 30px;
+  }
+
+  .newsletter_input {
+    align-self: flex-start;
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  .newsletter_input input {
+    font-size: 12px;
+    padding: 10px 15px;
+    width: 100% !important;
+  }
+
+  .newsletter_input button {
+    padding: 10px 20px;
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .newsletter {
+    margin: 0px 2rem;
+  }
+
+  .newsletter_subscribe {
+    gap: 30px;
+  }
+
+  .newsletter_subscribe p {
+    font-size: 20px;
+  }
+
+  .newsletter h2 {
+    font-size: 30px;
+  }
+}

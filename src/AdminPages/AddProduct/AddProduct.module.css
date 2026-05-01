@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+.container {
+  /* background: #f3f4f6; */
+  padding: 40px;
+  min-height: 100vh;
+}
+
+.form {
+  background: #ffffff;
+  /* width: 100%; */
+  width: 800px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.field label {
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 6px;
+  color: #374151;
+  font-weight: 500;
+}
+
+.field input,
+.field select,
+.field textarea {
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+}
+
+.row {
+  display: flex;
+  gap: 16px;
+}
+
+.row .field {
+  flex: 1;
+}
+
+.uploadBox {
+  border: 2px dashed #d1d5db;
+  border-radius: 10px;
+  padding: 25px;
+  text-align: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.uploadBox input {
+  display: none;
+}
+
+.button {
+  /* background: #5b6def;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 15px; */
+  padding: 10px 30px;
+  border-radius: 20px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
