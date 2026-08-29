@@ -1,0 +1,94 @@
+.userSideMenu {
+  width: 250px;
+  height: fit-content;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.userSideMenuHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 25px 30px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* .userSideMenuDivider {
+  height: 1px;
+  background-color: #e0e0e0;
+} */
+
+.userSideMenuUsername > p:first-child {
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+}
+
+.userSideMenuUsername > p:last-child {
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  color: #8b8b8b;
+}
+
+.userSideMenuAvatar {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: #f0a8a0;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 50%;
+}
+
+.userSideMenuList {
+  list-style: none;
+  padding: 20px 0px;
+  margin: 0;
+}
+
+.userSideMenuItem {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 10px 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.userSideMenuIcon svg {
+  width: 25px;
+  height: 25px;
+}
+
+.userSideMenuLabel {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  color: #8b8b8b;
+  margin: 0;
+}
+
+.userSideMenuItem:hover {
+  background-color: #efbcbc;
+}
+
+.userSideMenuItem.active {
+  background-color: #e48c8c;
+  border-right: 6px solid #f0a8a0;
+}
+
+.userSideMenuItem:hover .userSideMenuLabel,
+.userSideMenuItem.active .userSideMenuLabel {
+  color: white;
+}
+
+.userSideMenuItem:hover .userSideMenuIcon svg,
+.userSideMenuItem.active .userSideMenuIcon svg {
+  color: white;
+  stroke: currentColor;
+}

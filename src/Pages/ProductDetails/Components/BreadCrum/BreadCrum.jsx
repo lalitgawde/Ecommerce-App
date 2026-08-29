@@ -11,10 +11,11 @@ function BreadCrum({ product }) {
       <span>SHOP</span>
       <img src={breadcrum_arrow} />
       <span>
-        {product.category[0].toUpperCase() + product.category.slice(1)}
+        {/* {product.category[0].toUpperCase() + product.category.slice(1)} */}
+        {product.category.toUpperCase()}
       </span>
       <img src={breadcrum_arrow} />
-      <span>{product.name}</span>
+      <span>{product.name.toUpperCase()}</span>
     </div>
   );
 }

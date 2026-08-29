@@ -36,4 +36,6 @@ let data_product = [
 
 export const navList = ["Shop", "Mens", "Womens", "Kids"];
 
+export const sizeArray = ["S", "M", "L", "XL", "XXL"];
+
 export default data_product;

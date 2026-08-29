@@ -72,18 +72,23 @@
   cursor: pointer;
 }
 
+.cartIcon img {
+  width: 30px;
+  height: 30px;
+}
+
 .cartNumber {
   position: absolute;
   top: -6px;
   right: -6px;
   border-radius: 50%;
-  font-size: 15px;
+  font-size: 12px;
   background-color: rgb(238, 75, 75);
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   color: white;
 }
 
@@ -106,16 +111,43 @@
 .userActions {
   position: absolute;
   display: flex;
-  /* flex-direction: column; */
-  bottom: -65px;
-  padding: 10px 20px;
-  right: 5px;
+  flex-direction: column;
+  top: 100%;
+  right: 2px;
+  width: 150px;
   background-color: white;
   border: 1px solid #d1d5db;
   border-radius: 6px;
   display: flex;
-  gap: 10px;
+  margin-top: 5px;
   transition: all 2s;
+}
+
+.userActions button {
+  border: none;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  color: #656161;
+  width: 100%;
+  border-radius: 0px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.userActions button:hover {
+  color: rgb(157, 157, 233);
+  background-color: #f0f0f0;
+}
+
+.icon {
+  width: 20px;
+  height: 25px;
+  margin-right: 5px;
 }
 
 @media screen and (max-width: 700px) {

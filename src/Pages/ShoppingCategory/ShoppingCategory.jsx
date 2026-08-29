@@ -84,13 +84,24 @@ function ShoppingCategory() {
                   isOpen: !prevValue.isOpen,
                 }))
               }>
-              Sort by <img src={dropdown_icon} alt="dropdown Icon" />
+              Sort by{" "}
+              <img
+                src={dropdown_icon}
+                alt="dropdown Icon"
+                className={
+                  styles.dropdown_icon +
+                  " " +
+                  (sortDropdown.isOpen ? styles.rotate : "")
+                }
+              />
             </button>
             {sortDropdown.isOpen && (
               <div
                 style={{
                   position: "absolute",
-                  top: "90%",
+                  top: "100%",
+                  borderRadius: "4px",
+                  transition: "all 0.3s ease-in-out",
                   right: "4px",
                   background: "#eee",
                   padding: "10px",
@@ -141,9 +152,9 @@ function ShoppingCategory() {
         )}
         {loadedTotalItems < category_product.length ? (
           <div className={styles.loadMore_container}>
-            <div></div>
+            {/* <div></div> */}
             <button onClick={onLoadMoreHandler}>Explore More</button>
-            <div></div>
+            {/* <div></div> */}
           </div>
         ) : null}
       </div>

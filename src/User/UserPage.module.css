@@ -1,0 +1,13 @@
+.userPageContainer {
+  padding: 40px 60px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.userPageContent {
+  flex: 1;
+  min-width: 0;
+  background-color: transparent;
+  border-radius: 10px;
+}

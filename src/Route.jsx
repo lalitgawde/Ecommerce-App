@@ -8,6 +8,7 @@ import ShoppingCategory from "./Pages/ShoppingCategory/ShoppingCategory";
 import Logout from "./Pages/Logout/Logout";
 import DashBoard from "./AdminPages/DashBoard/DashBoard";
 import AdminLogin from "./AdminPages/AdminLogin/AdminLogin";
+import UserPage from "./User/UserPage";
 import ProtectedRoute from "./ProtectedRoute";
 
 const AppRoutes = (
@@ -18,6 +19,9 @@ const AppRoutes = (
     <Route path="/login" element={<Login />} />
     <Route path="/signup" element={<SignUp />} />
     <Route path="/logout" element={<Logout />} />
+    {/* <Route path="/user" element={<ProtectedRoute />}> */}
+    <Route path="/user" element={<UserPage />} />
+    {/* </Route> */}
     <Route path="/shopping-category/:category" element={<ShoppingCategory />} />
   </Routes>
 );

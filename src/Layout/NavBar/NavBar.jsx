@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { navList } from "../../assets/data";
 import styles from "./NavBar.module.css";
 import Logo from "../../assets/logo.png";
 import cart from "../../assets/cart_icon.png";
 import { useLocation, useNavigate } from "react-router-dom";
+import {
+  ArrowRightStartOnRectangleIcon,
+  UserCircleIcon,
+} from "@heroicons/react/24/outline";
 import UserContext from "../../Context/UserContextProvider";
+import CartContext from "../../Context/CartContextProvider";
 
 function NavBar() {
   const location = useLocation();
@@ -17,6 +22,7 @@ function NavBar() {
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const navigate = useNavigate();
   const { isAuthenticated, user, logout } = React.useContext(UserContext);
+  const { cartLength } = React.useContext(CartContext);
 
   const handleTabClick = (item) => {
     setActiveTab(item);
@@ -34,6 +40,8 @@ function NavBar() {
     } else if (item === "Cart") {
       navigate("/cart");
       setActiveTab("");
+    } else if (item === "User") {
+      navigate("/user");
     } else if (item === "Login") {
       navigate("/login");
       setActiveTab("");
@@ -43,18 +51,18 @@ function NavBar() {
     }
   };
 
-  // useEffect(() => {
-  //   const clickHandler = () => {
-  //     if (isUserMenuOpen) {
-  //       setIsUserMenuOpen(false);
-  //     }
-  //   };
-  //   document.addEventListener("click", clickHandler);
+  useEffect(() => {
+    const clickHandler = () => {
+      if (isUserMenuOpen) {
+        setIsUserMenuOpen(false);
+      }
+    };
+    document.addEventListener("click", clickHandler);
 
-  //   return () => {
-  //     document.removeEventListener("click", clickHandler);
-  //   };
-  // });
+    return () => {
+      document.removeEventListener("click", clickHandler);
+    };
+  });
 
   return (
     <header className={styles.header}>
@@ -79,17 +87,25 @@ function NavBar() {
         )}
         <div className={styles.cartIcon} onClick={() => handleClick("Cart")}>
           <img src={cart} alt="cart" />
-          <p className={styles.cartNumber}>0</p>
+          <p className={styles.cartNumber}>{cartLength}</p>
         </div>
         {isAuthenticated && (
           <div
             className={styles.user}
-            onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}>
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsUserMenuOpen(!isUserMenuOpen);
+            }}>
             {user.user.username[0].toUpperCase()}
             {isUserMenuOpen && (
               <div className={styles.userActions}>
-                <button onClick={() => handleClick("Login")}>User</button>
-                <button onClick={() => handleClick("Logout")}>Logout</button>
+                <button onClick={() => handleClick("User")}>
+                  <UserCircleIcon className={styles.icon} /> <span>User</span>
+                </button>
+                <button onClick={() => handleClick("Logout")}>
+                  <ArrowRightStartOnRectangleIcon className={styles.icon} />{" "}
+                  <span>Logout</span>
+                </button>
               </div>
             )}
           </div>

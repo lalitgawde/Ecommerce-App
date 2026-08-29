@@ -79,6 +79,7 @@
 .loadMore_container {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin: 6rem 0px 0px 0px;
 }
 
@@ -96,4 +97,12 @@
   border-radius: 30px;
   font-size: 15px;
   font-family: "Roboto", sans-serif;
+}
+
+.dropdown_icon {
+  transition: transform 0.3s ease-in-out;
+}
+
+.dropdown_icon.rotate {
+  transform: rotate(180deg);
 }

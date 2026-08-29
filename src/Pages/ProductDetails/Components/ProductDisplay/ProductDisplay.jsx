@@ -1,10 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styles from "./ProductDisplay.module.css";
 import star_icon from "../../../../assets/star_icon.png";
 import star_dull_icon from "../../../../assets/star_dull_icon.png";
+import { sizeArray } from "../../../../assets/data";
+import CartContext from "../../../../Context/CartContextProvider";
 
 function ProductDisplay({ product }) {
   const [size, setSize] = useState("");
+  const [quantity, setQuantity] = useState(1);
+  const { addItemToCart } = useContext(CartContext);
+  const addItem = (product) => {
+    const item = {
+      ...product,
+      quantity: quantity,
+      size: size,
+    };
+    addItemToCart({ type: "ADD_ITEM", payload: item });
+  };
+
   return (
     <div className={styles.productDisplay}>
       <div className={styles.productDisplay_left_side}>
@@ -40,34 +53,34 @@ function ProductDisplay({ product }) {
           {product.description ??
             "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves,worn as an undershirt or outer garment."}
         </p>
-        <div className={styles.size_section}>
-          <h3>Select Size</h3>
-          <div className={styles.sizes}>
-            <span
-              onClick={() => setSize("S")}
-              className={size === "S" ? styles.active : styles.sizes_span}>
-              S
-            </span>
-            <span
-              onClick={() => setSize("M")}
-              className={size === "M" ? styles.active : styles.sizes_span}>
-              M
-            </span>
-            <span
-              onClick={() => setSize("L")}
-              className={size === "L" ? styles.active : styles.sizes_span}>
-              L
-            </span>
-            <span
-              onClick={() => setSize("XL")}
-              className={size === "XL" ? styles.active : styles.sizes_span}>
-              XL
-            </span>
-            <span
-              onClick={() => setSize("XXL")}
-              className={size === "XXL" ? styles.active : styles.sizes_span}>
-              XXL
-            </span>
+        <div className={styles.size_quantity_section}>
+          <div className={styles.size_section}>
+            <h3>Select Size</h3>
+            <div className={styles.sizes}>
+              {sizeArray.map((s) => (
+                <span
+                  key={s}
+                  onClick={() => setSize(s)}
+                  className={`${size === s ? styles.active : styles.sizes_span}`}>
+                  {s}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className={styles.quantity_section}>
+            <h3>Quantity</h3>
+            <div className={styles.quantity}>
+              <button onClick={() => quantity > 1 && setQuantity(quantity - 1)}>
+                -
+              </button>
+              <input
+                type="number"
+                min="1"
+                value={quantity}
+                onChange={(e) => setQuantity(parseInt(e.target.value))}
+              />
+              <button onClick={() => setQuantity(quantity + 1)}>+</button>
+            </div>
           </div>
         </div>
         <p className={styles.meta}>
@@ -76,7 +89,9 @@ function ProductDisplay({ product }) {
             {product.category[0].toUpperCase() + product.category.slice(1)}
           </span>
         </p>
-        <button className={styles.add_to_cart}>ADD TO CART</button>
+        <button className={styles.add_to_cart} onClick={() => addItem(product)}>
+          ADD TO CART
+        </button>
       </div>
     </div>
   );
