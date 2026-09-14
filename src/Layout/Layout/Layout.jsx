@@ -6,7 +6,6 @@ import styles from "./Layout.module.css";
 
 function Layout({ children }) {
   const location = useLocation();
-  console.log(location);
 
   const hideFooter =
     location.pathname === "/login" ||

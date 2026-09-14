@@ -3,7 +3,6 @@ import styles from "./BreadCrum.module.css";
 import breadcrum_arrow from "../../../../assets/breadcrum_arrow.png";
 
 function BreadCrum({ product }) {
-  console.log("product", product);
   return (
     <div className={styles.bread_crum}>
       <span>HOME</span>

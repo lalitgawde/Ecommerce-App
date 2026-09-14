@@ -10,7 +10,6 @@ const CartContext = createContext(initialState);
 const cartReducer = (state, action) => {
   if (action.type === "ADD_ITEM") {
     const newItem = action.payload;
-    console.log(newItem, "newItem");
     const existingItem = state.cartItems.find((item) => item.id === newItem.id);
     let updatedItems;
     if (!existingItem) {
@@ -71,7 +70,6 @@ const cartReducer = (state, action) => {
 
 export function CartProvider({ children }) {
   const [cartState, dispatch] = useReducer(cartReducer, initialState);
-  console.log(cartState, "cartState");
 
   const addItemToCart = (item) => {
     dispatch({ type: "ADD_ITEM", payload: item });

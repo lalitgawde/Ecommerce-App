@@ -12,7 +12,6 @@ import CardSkeletonLoader from "../../Loader/CardSkeletonLoader/CardSkeletonLoad
 function ShoppingCategory() {
   const { category } = useParams();
   const [loading, setLoading] = useState(true);
-  console.log("category", category);
 
   useEffect(() => {
     setTimeout(() => {

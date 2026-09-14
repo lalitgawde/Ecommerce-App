@@ -5,7 +5,6 @@ import { Link, useLocation } from "react-router-dom";
 
 function Logout() {
   const location = useLocation();
-  console.log(location.pathname === "/logout" ? "/login" : "/admin/login");
   return (
     <div className={styles.container}>
       <div className={styles.card}>

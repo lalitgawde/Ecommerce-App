@@ -28,7 +28,6 @@ function GoogleRedirect() {
           throw new Error("Failed to authenticate with Strapi.");
         }
         const data = await response.json();
-        console.log("Google login response:", data);
         localStorage.setItem("jwt", data.jwt);
         localStorage.setItem("user", JSON.stringify(data.user));
         login(data);

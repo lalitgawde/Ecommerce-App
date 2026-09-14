@@ -3,7 +3,6 @@ import CartContext from "../../Context/CartContextProvider";
 
 function Cart() {
   const { cartState, removeItemFromCart } = useContext(CartContext);
-  console.log(cartState, "cartState");
   return (
     <div>
       <ul>

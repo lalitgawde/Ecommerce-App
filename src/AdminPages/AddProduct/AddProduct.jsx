@@ -43,7 +43,6 @@ function AddProduct() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("product", product.image);
     try {
       let imageId = null;
       setIsLoading(true);
@@ -76,7 +75,6 @@ function AddProduct() {
           },
         },
       );
-      console.log("prodres", productRes);
       if (productRes.statusText === "Created") {
         setIsLoading(false);
         toast.success(`Product Added Successfully!!`, {
@@ -92,7 +90,6 @@ function AddProduct() {
       });
     }
   };
-  console.log("user", user);
   return (
     <>
       {isLoading && <Loader />}

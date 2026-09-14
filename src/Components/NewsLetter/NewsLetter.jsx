@@ -16,7 +16,6 @@ function NewsLetter() {
   };
 
   const onClickHandler = async () => {
-    console.log("Email submitted:", email);
     if (user) {
       if (email) {
         try {
@@ -37,7 +36,6 @@ function NewsLetter() {
             },
           );
           setIsLoading(false);
-          console.log("res", res);
           if (res.data.data.documentId) {
             toast.success(`Subscribe to Newsletter successfully!`, {
               position: "top-center",

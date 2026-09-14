@@ -61,7 +61,6 @@ function Login() {
             password: password,
           },
         );
-        console.log("Well done!", response);
         if (response.statusText === "OK") {
           login(response.data);
           navigate("/");
