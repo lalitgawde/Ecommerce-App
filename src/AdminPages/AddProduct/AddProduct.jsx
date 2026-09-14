@@ -4,8 +4,7 @@ import axios from "axios";
 import UserContext from "../../Context/UserContextProvider";
 import Loader from "../../Loader/Spinner/Loader";
 import { toast, ToastContainer } from "react-toastify";
-
-const API = "http://localhost:1337";
+import { BACKEND_URL } from "../../utils/constants";
 
 function AddProduct() {
   const [isLoading, setIsLoading] = React.useState(false);
@@ -51,7 +50,7 @@ function AddProduct() {
       if (product.image) {
         const formData = new FormData();
         formData.append("files", product.image);
-        const uploadRes = await axios.post(`${API}/api/upload`, formData, {
+        const uploadRes = await axios.post(`${BACKEND_URL}/api/upload`, formData, {
           headers: {
             Authorization: `Bearer ${user.jwt}`,
           },
@@ -59,7 +58,7 @@ function AddProduct() {
         imageId = uploadRes.data[0].id;
       }
       const productRes = await axios.post(
-        `${API}/api/products`,
+        `${BACKEND_URL}/api/products`,
         {
           data: {
             product_title: product.title,

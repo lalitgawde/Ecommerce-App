@@ -1,43 +1,8 @@
 import React from "react";
 import styles from "./UserSideMenu.module.css";
-import {
-  ArchiveBoxIcon,
-  HeartIcon,
-  MapPinIcon,
-  UsersIcon,
-  ArrowRightOnRectangleIcon,
-  CogIcon,
-} from "@heroicons/react/24/outline";
 import { useNavigate } from "react-router-dom";
 
-const UserSideMenuOptions = [
-  {
-    label: "Profile",
-    icon: <UsersIcon />,
-  },
-  {
-    label: "Addresses",
-    icon: <MapPinIcon />,
-  },
-  {
-    label: "Orders",
-    icon: <ArchiveBoxIcon />,
-  },
-  {
-    label: "Password & security",
-    icon: <CogIcon />,
-  },
-  {
-    label: "Wishlist",
-    icon: <HeartIcon />,
-  },
-  {
-    label: "Logout",
-    icon: <ArrowRightOnRectangleIcon />,
-  },
-];
-
-function UserSideMenu({ activeOption, setActiveOption }) {
+function UserSideMenu({ UserSideMenuOptions, activeOption, setActiveOption }) {
   const navigate = useNavigate();
   const handleOptionClick = (option) => {
     if (option.label === "Logout") {

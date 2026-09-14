@@ -4,6 +4,7 @@ import axios from "axios";
 import UserContext from "../../Context/UserContextProvider";
 import { toast, ToastContainer } from "react-toastify";
 import Loader from "../../Loader/Spinner/Loader";
+import { BACKEND_URL } from "../../utils/constants";
 
 function NewsLetter() {
   const [email, setEmail] = useState("");
@@ -21,7 +22,7 @@ function NewsLetter() {
         try {
           setIsLoading(true);
           const res = await axios.post(
-            `http://localhost:1337/api/news-letters`,
+            `${BACKEND_URL}/api/news-letters`,
             {
               data: {
                 newsletter_email: email,

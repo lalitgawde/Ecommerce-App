@@ -7,6 +7,7 @@ import axios from "axios";
 import UserContext from "../../Context/UserContextProvider";
 import Loader from "../../Loader/Spinner/Loader";
 import { ToastContainer, toast } from "react-toastify";
+import { BACKEND_URL } from "../../utils/constants";
 
 function AdminLogin() {
   const [username, setUsername] = React.useState("");
@@ -26,7 +27,7 @@ function AdminLogin() {
       try {
         setIsLoading(true);
         const response = await axios.post(
-          "http://localhost:1337/api/auth/local",
+          `${BACKEND_URL}/api/auth/local`,
           {
             identifier: username,
             password: password,

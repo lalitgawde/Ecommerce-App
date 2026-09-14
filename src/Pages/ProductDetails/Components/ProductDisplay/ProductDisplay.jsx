@@ -4,6 +4,7 @@ import star_icon from "../../../../assets/star_icon.png";
 import star_dull_icon from "../../../../assets/star_dull_icon.png";
 import { sizeArray } from "../../../../assets/data";
 import CartContext from "../../../../Context/CartContextProvider";
+import { HeartIcon } from "@heroicons/react/24/outline";
 
 function ProductDisplay({ product }) {
   const [size, setSize] = useState("");
@@ -16,6 +17,10 @@ function ProductDisplay({ product }) {
       size: size,
     };
     addItemToCart({ type: "ADD_ITEM", payload: item });
+  };
+  const addToWishlist = (product) => {
+    // Implement wishlist functionality here
+    console.log("Added to wishlist:", product);
   };
 
   return (
@@ -89,9 +94,20 @@ function ProductDisplay({ product }) {
             {product.category[0].toUpperCase() + product.category.slice(1)}
           </span>
         </p>
-        <button className={styles.add_to_cart} onClick={() => addItem(product)}>
-          ADD TO CART
-        </button>
+
+        <div className={styles.action_buttons}>
+          <button
+            className={styles.add_to_cart}
+            onClick={() => addItem(product)}>
+            ADD TO CART
+          </button>
+          <button
+            className={styles.add_to_wishlist}
+            onClick={() => addToWishlist(product)}>
+            <HeartIcon />
+            <span>ADD TO WISHLIST</span>
+          </button>
+        </div>
       </div>
     </div>
   );
