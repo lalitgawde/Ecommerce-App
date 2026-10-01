@@ -21,6 +21,7 @@
 }
 
 .product_image {
+  position: relative;
   width: 425px;
 }
 
@@ -166,7 +167,7 @@
 .action_buttons {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
   gap: 12px;
   margin-top: 20px;
@@ -187,16 +188,14 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-
   background-color: white;
   border: 1px solid #ddd;
   color: #222;
-
-  padding: 15px 30px;
-  font-size: 15px;
+  padding: 18px 35px;
+  font-size: 16px;
   font-weight: 600;
-
   cursor: pointer;
+  text-transform: uppercase;
   transition: all 0.2s ease;
 }
 

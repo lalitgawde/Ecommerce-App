@@ -56,7 +56,28 @@
 .header_actions {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 30px;
+}
+
+.header_actions .heartIcon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.header_actions .wishlistNumber {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  border-radius: 50%;
+  font-size: 12px;
+  background-color: rgb(238, 75, 75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  color: white;
 }
 
 .header_actions button {

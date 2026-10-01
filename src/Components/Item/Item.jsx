@@ -1,8 +1,9 @@
 import React from "react";
 import styles from "./Item.module.css";
 import { Link } from "react-router-dom";
+import HeartIconComp from "../HeartIcon/HeartIcon";
 
-function Item({ item, to = "" }) {
+function Item({ item, to = "", isWishlistItem = false }) {
   return (
     <Link to={to} className={styles.link}>
       <li
@@ -10,7 +11,9 @@ function Item({ item, to = "" }) {
         className={styles.product_item}
         onClick={() => {
           window.scrollTo(0, 0);
-        }}>
+        }}
+      >
+        <HeartIconComp isWishlistItem={isWishlistItem} />
         <img src={item.image} alt={item.name} />
         <p className={styles.product_item_name}>{item.name}</p>
         <p className={styles.product_item_price}>

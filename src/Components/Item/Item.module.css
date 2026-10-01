@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  position: relative;
 }
 
 .link {
@@ -20,14 +21,14 @@
     z-index 0ms 400ms;
 }
 
-.product_item img:hover {
-  transform: scale(1.1); /* A smooth visual transition */
-  z-index: 10; /* Bring to front on hover */
+/* .product_item img:hover { */
+  /* transform: scale(1.1); A smooth visual transition */
+  /* z-index: 10; Bring to front on hover */
   /* Transition for moving IN: z-index is NOT delayed (0ms) */
-  transition:
+  /* transition:
     transform 400ms ease,
     z-index 0ms 0ms;
-}
+} */
 
 .product_item_name,
 .product_item_price {

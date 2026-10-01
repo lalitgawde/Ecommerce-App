@@ -149,6 +149,7 @@
   height: 15px;
   flex: 0 0 auto;
   accent-color: #ff5b48;
+  cursor: pointer;
 }
 
 .checkGroup a,

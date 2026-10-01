@@ -204,7 +204,10 @@ function SignUp() {
                   />{" "}
                   <span>
                     I agree to the <a href="#terms">Terms of Service</a> and{" "}
-                    <a href="#privacy">Privacy Policy</a>.
+                    <a href="#privacy" target="_blank">
+                      Privacy Policy
+                    </a>
+                    .
                   </span>
                 </label>
               </div>
@@ -237,7 +240,7 @@ function SignUp() {
           </div>
           <p className={styles.privacyNote}>
             We never share your details. You can delete your account at any time
-            from Password &amp; security.
+            from password &amp; security.
           </p>
         </aside>
       </main>

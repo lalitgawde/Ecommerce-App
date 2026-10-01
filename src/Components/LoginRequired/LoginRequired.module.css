@@ -1,0 +1,70 @@
+.loginRequired {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 100px;
+  /* justify-content: center; */
+  height: 100vh;
+  text-align: center;
+}
+
+.loginLockIconContainer {
+  font-size: 10px;
+  background-color: #fac6c2;
+  padding: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+}
+
+.lockIcon {
+  width: 80px;
+  height: 80px;
+  color: #ff5043;
+  /* margin-bottom: 20px; */
+}
+
+.loginRequiredText {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #ff5043;
+}
+
+.loginRequiredSubText {
+  font-size: 18px;
+  font-weight: 400;
+  color: #728096;
+  /* max-width: 400px; */
+}
+
+.loginRequiredButton {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.loginButton {
+  background-color: #ff5043;
+  font-size: 20px;
+  color: #ffffff;
+  padding: 16px 24px;
+  border-radius: 18px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.registerButton {
+  background-color: #ffffff;
+  font-size: 20px;
+  color: #ff5043;
+  padding: 16px 24px;
+  border-radius: 18px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid #f68a82;
+}

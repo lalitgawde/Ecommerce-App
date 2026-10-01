@@ -16,7 +16,9 @@ const AppRoutes = (
   <Routes>
     <Route path="/" element={<Home />} />
     <Route path="/product/:id" element={<ProductsDetails />} />
-    <Route path="/cart" element={<Cart />} />
+    <Route path="/cart" element={<ProtectedRoute />}>
+      <Route path="/cart" element={<Cart />} />
+    </Route>
     <Route path="/login" element={<Login />} />
     <Route path="/signup" element={<SignUp />} />
     <Route path="/logout" element={<Logout />} />

@@ -11,7 +11,7 @@ function Products({ title, products_data }) {
       </div>
       <ul className={styles.products}>
         {products_data.map((item) => {
-          return <Item key={item.id} item={item} />;
+          return <Item key={item.id} item={item} to={`/products/${item.id}`} isWishlistItem={false} />;
         })}
       </ul>
     </div>

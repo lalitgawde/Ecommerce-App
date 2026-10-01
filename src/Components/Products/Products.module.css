@@ -30,7 +30,7 @@
 
 .products {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
   flex-wrap: wrap;
   /* display: grid;

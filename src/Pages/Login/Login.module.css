@@ -224,9 +224,9 @@
 }
 
 .inputRememberMeGroup input[type="checkbox"] {
-  accent-color: #ff604d;
   width: 16px;
   height: 16px;
+  accent-color: #ff5b48;
 }
 
 .inputRememberMeGroup a {
@@ -276,7 +276,7 @@
     padding: 24px 18px;
   }
   .leftTitle {
-    font-size: 40px;
+    font-size: 30px;
   }
   .description,
   .loginContentDescription {

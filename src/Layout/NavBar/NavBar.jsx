@@ -6,6 +6,7 @@ import cart from "../../assets/cart_icon.png";
 import { useLocation, useNavigate } from "react-router-dom";
 import {
   ArrowRightStartOnRectangleIcon,
+  HeartIcon,
   UserCircleIcon,
 } from "@heroicons/react/24/outline";
 import UserContext from "../../Context/UserContextProvider";
@@ -46,8 +47,9 @@ function NavBar() {
       navigate("/login");
       setActiveTab("");
     } else if (item === "Logout") {
+      const signedOutUser = user;
       logout();
-      navigate("/logout");
+      navigate("/logout", { state: { signedOutUser } });
     }
   };
 
@@ -85,6 +87,16 @@ function NavBar() {
         {!isAuthenticated && (
           <button onClick={() => handleClick("Login")}>Login</button>
         )}
+        {isAuthenticated && (
+          <div className={styles.cartIcon}>
+            <HeartIcon
+              className={styles.heartIcon}
+              onClick={() => handleClick("Wishlist")}
+            />
+            <p className={styles.wishlistNumber}>{user?.wishlist?.length ?? 0}</p>
+          </div>
+        )}
+
         <div className={styles.cartIcon} onClick={() => handleClick("Cart")}>
           <img src={cart} alt="cart" />
           <p className={styles.cartNumber}>{cartLength}</p>
@@ -95,7 +107,8 @@ function NavBar() {
             onClick={(e) => {
               e.stopPropagation();
               setIsUserMenuOpen(!isUserMenuOpen);
-            }}>
+            }}
+          >
             {user.user.username[0].toUpperCase()}
             {isUserMenuOpen && (
               <div className={styles.userActions}>

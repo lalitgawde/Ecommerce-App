@@ -4,7 +4,7 @@ import star_icon from "../../../../assets/star_icon.png";
 import star_dull_icon from "../../../../assets/star_dull_icon.png";
 import { sizeArray } from "../../../../assets/data";
 import CartContext from "../../../../Context/CartContextProvider";
-import { HeartIcon } from "@heroicons/react/24/outline";
+import HeartIconComp from "../../../../Components/HeartIcon/HeartIcon";
 
 function ProductDisplay({ product }) {
   const [size, setSize] = useState("");
@@ -18,10 +18,6 @@ function ProductDisplay({ product }) {
     };
     addItemToCart({ type: "ADD_ITEM", payload: item });
   };
-  const addToWishlist = (product) => {
-    // Implement wishlist functionality here
-    console.log("Added to wishlist:", product);
-  };
 
   return (
     <div className={styles.productDisplay}>
@@ -33,6 +29,7 @@ function ProductDisplay({ product }) {
           <img src={product.image} alt="product image" />
         </div>
         <div className={styles.product_image}>
+          <HeartIconComp  /> 
           <img src={product.image} alt="product image" />
         </div>
       </div>
@@ -66,7 +63,8 @@ function ProductDisplay({ product }) {
                 <span
                   key={s}
                   onClick={() => setSize(s)}
-                  className={`${size === s ? styles.active : styles.sizes_span}`}>
+                  className={`${size === s ? styles.active : styles.sizes_span}`}
+                >
                   {s}
                 </span>
               ))}
@@ -94,18 +92,17 @@ function ProductDisplay({ product }) {
             {product.category[0].toUpperCase() + product.category.slice(1)}
           </span>
         </p>
-
         <div className={styles.action_buttons}>
           <button
             className={styles.add_to_cart}
-            onClick={() => addItem(product)}>
+            onClick={() => addItem(product)}
+          >
             ADD TO CART
           </button>
           <button
             className={styles.add_to_wishlist}
-            onClick={() => addToWishlist(product)}>
-            <HeartIcon />
-            <span>ADD TO WISHLIST</span>
+          >
+            <span>Buy Now</span>
           </button>
         </div>
       </div>

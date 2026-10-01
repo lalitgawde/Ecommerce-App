@@ -1,0 +1,16 @@
+
+.heartIcon {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  top: 10px;
+  color: #6B7280;
+  right: 10px;
+  z-index: 5;
+  cursor: pointer;
+  transition: transform 400ms ease;
+}
+
+.heartIconSolid {
+  color: #f69090;
+}
